@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:skill_match/screens/login_screen.dart';
+import 'package:skill_match/screens/otp_login_screen.dart';
 import 'package:skill_match/screens/welcome_screen.dart';
 
 void main() {
@@ -17,10 +18,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      initialRoute: LogInScreen.id,
+      initialRoute: WelcomeScreen.id,
       routes: {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         LogInScreen.id: (context) => const LogInScreen(),
+        OTPScreen.id: (context) => const OTPScreen(),
 
       },
       //home:  const WelcomeScreen(),

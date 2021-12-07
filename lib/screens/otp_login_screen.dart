@@ -1,20 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
-import 'otp_login_screen.dart';
-
-class LogInScreen extends StatefulWidget {
-  static const String id = 'login_screen';
-  const LogInScreen({Key? key}) : super(key: key);
+class OTPScreen extends StatefulWidget {
+  static const String id = 'OTP_screen';
+  const OTPScreen({Key? key}) : super(key: key);
 
   @override
-  _LogInScreenState createState() => _LogInScreenState();
+  _OTPScreenState createState() => _OTPScreenState();
 }
 
-class _LogInScreenState extends State<LogInScreen> {
+class _OTPScreenState extends State<OTPScreen> {
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Column(
@@ -86,25 +85,34 @@ class _LogInScreenState extends State<LogInScreen> {
                                     color: Colors.white,
                                   ),
                                   child: Row(
-                                    children:  const <Widget>[
-                                      Expanded(
+                                    children:   <Widget>[
+                                      const Expanded(
                                         child: TextField(
                                           keyboardType: TextInputType.emailAddress,
                                           textAlign: TextAlign.center,
                                           //onChanged: () {},
                                           decoration: InputDecoration(
-                                            fillColor: Colors.white,
+                                              fillColor: Colors.white,
                                               border: InputBorder.none,
                                               //labelText: 'Phone Number',
-                                              hintText: 'Phone Number'
+                                              hintText: 'OTP'
                                           ),
                                         ),
                                       ),
-                                      Align(
-                                        alignment: Alignment.topRight,
-                                          child: Icon(Icons.dialpad_sharp, size: 20, color: Colors.grey,),
+                                      TextButton(
+                                          style: TextButton.styleFrom(
+                                            textStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+                                          ),
+                                        onPressed: null,
+                                        child:  const Align(
+                                          alignment: Alignment.topRight,
+                                          child: Text(
+                                            'Resend OTP',
+                                            textAlign: TextAlign.right,
+                                          ),
+                                        ),
 
-                                      )
+                                      ),
                                     ],
                                   ),
                                 ),
@@ -128,9 +136,7 @@ class _LogInScreenState extends State<LogInScreen> {
                                         ),
                                       ),
                                       IconButton(
-                                        onPressed: (){
-                                          Navigator.pushNamed(context, OTPScreen.id);
-                                        },
+                                        onPressed: (){},
                                         icon: const Icon(Icons.logout, size: 30, color: Colors.white,),
                                       )
                                       // IconButton(Icons.logout,
