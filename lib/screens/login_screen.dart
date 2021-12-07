@@ -89,39 +89,6 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ],
                   ),
-                  child: Expanded(
-                    child: Container(
-                      padding: const EdgeInsets.only(left: 47, right: 47, top: 290, bottom: 58),
-                      child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(5.00),
-                          color: Colors.black,
-                        ),
-                        child: Row(
-                          children:  <Widget>[
-                            const Expanded(
-                              child: Text(
-                                'Log In',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: (){},
-                              icon: const Icon(Icons.logout, size: 30, color: Colors.white,),
-                            )
-                            // IconButton(Icons.logout,
-                            //   color: Colors.black,
-                            // ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
                 ),
               ),
             ),
