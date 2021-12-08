@@ -1,17 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:skill_match/screens/registration_first_screen.dart';
+import 'package:form_builder_validators/form_builder_validators.dart';
 
-class OTPScreen extends StatefulWidget {
-  static const String id = 'OTP_screen';
-  const OTPScreen({Key? key}) : super(key: key);
+class RegistrationSecondScreen extends StatefulWidget {
+  static const String id = 'registration_second_screen';
+  const RegistrationSecondScreen({Key? key}) : super(key: key);
 
   @override
-  _OTPScreenState createState() => _OTPScreenState();
+  _RegistrationSecondScreenState createState() => _RegistrationSecondScreenState();
 }
 
-class _OTPScreenState extends State<OTPScreen> {
+class _RegistrationSecondScreenState extends State<RegistrationSecondScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,7 +21,9 @@ class _OTPScreenState extends State<OTPScreen> {
           children:  <Widget>[
 
             Container(
-              child: Image.network('https://cdn.logojoy.com/wp-content/uploads/2018/08/23161101/5-25.png'),
+              child: Image.network('https://cdn.logojoy.com/wp-content/uploads/2018/08/23161101/5-25.png',
+                height: 270.0,
+              ),
             ),
             const Center(
               child: Text(
@@ -43,7 +44,7 @@ class _OTPScreenState extends State<OTPScreen> {
                 ),
               ),
             ),
-            const SizedBox(height: 35),
+            const SizedBox(height: 30),
 
             Expanded(
               //padding: const EdgeInsets.only(left: 47, right: 47),
@@ -58,7 +59,7 @@ class _OTPScreenState extends State<OTPScreen> {
                     children: [
                       Expanded(
                         child: Container(
-                          padding: const EdgeInsets.only(left: 47, right: 47, top: 30, bottom: 50),
+                          padding: const EdgeInsets.only(left: 47, right: 47, top: 40, bottom: 50),
                           child: SingleChildScrollView(
                             child: Expanded(
                               child: Column(
@@ -68,7 +69,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                       Expanded(
                                         child: Center(
                                           child: Text(
-                                            'Login',
+                                            'Registration',
                                             style: TextStyle(
                                               color: Colors.black,
                                               fontSize: 26.0,
@@ -79,52 +80,100 @@ class _OTPScreenState extends State<OTPScreen> {
                                       ),
                                     ],
                                   ),
+                                  const SizedBox(height: 15.0),
+                                  Row(
+                                    children: const <Widget>[
+                                      Expanded(
+                                        child: Align(
+                                            alignment: Alignment.centerRight,
+                                            child: Icon(Icons.circle, size: 15, color: Colors.black,)
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Align(
+                                            alignment: Alignment.centerLeft,
+                                            child: Icon(Icons.circle, size: 15, color: Colors.black,)
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                   const SizedBox(height: 30.0),
                                   SingleChildScrollView(
                                     child: Container(
-                                      padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 70),
+                                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(5.00),
                                         color: Colors.white,
                                       ),
                                       child: Row(
-                                        children:   <Widget>[
-                                          const Expanded(
+                                        children:   const <Widget>[
+                                          Expanded(
                                             child: TextField(
                                               keyboardType: TextInputType.number,
                                               textAlign: TextAlign.center,
                                               //onChanged: () {},
                                               decoration: InputDecoration(
-                                                  labelStyle: TextStyle(
-                                                    color: Colors.grey,
-                                                    fontSize: 18.00,
-                                                  ),
-                                                  fillColor: Colors.white,
-                                                  border: InputBorder.none,
-                                                  labelText: 'OTP',
-                                                  //hintText: 'OTP'
+                                                labelStyle: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 15.00,
+                                                ),
+                                                hintStyle: TextStyle(
+                                                  color: Colors.grey,
+                                                  fontSize: 15.00,
+                                                ),
+                                                fillColor: Colors.white,
+                                                border: InputBorder.none,
+                                                labelText: 'Location',
+                                                hintText: 'Your Location/Tap icon'
                                               ),
                                             ),
                                           ),
-                                          TextButton(
-                                              style: TextButton.styleFrom(
-                                                textStyle: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
-                                              ),
-                                            onPressed: null,
-                                            child:  const Align(
-                                              alignment: Alignment.topRight,
-                                              child: Text(
-                                                'Resend OTP',
-                                                textAlign: TextAlign.right,
-                                              ),
+                                          Align(
+                                            alignment: Alignment.topRight,
+                                            child: IconButton(
+                                              //Icons.location_on_outlined, size: 20, color: Colors.grey,
+                                              onPressed: null,
+                                              icon: Icon(Icons.location_on_outlined, size: 20, color: Colors.grey),
                                             ),
-
-                                          ),
+                                          )
                                         ],
                                       ),
                                     ),
                                   ),
-                                  const SizedBox(height: 30.0),
+                                  const SizedBox(height: 20.0),
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(5.00),
+                                      color: Colors.white,
+                                    ),
+                                    child: Row(
+                                      children:   const <Widget>[
+                                        Expanded(
+                                          child: TextField(
+                                            keyboardType: TextInputType.emailAddress,
+                                            textAlign: TextAlign.center,
+                                            //onChanged: () {},
+                                            decoration: InputDecoration(
+                                              labelStyle: TextStyle(
+                                                color: Colors.grey,
+                                                fontSize: 15.00,
+                                              ),
+                                              fillColor: Colors.white,
+                                              border: InputBorder.none,
+                                              labelText: 'Your Name',
+                                              //hintText: 'OTP'
+                                            ),
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment: Alignment.topRight,
+                                          child: Icon(Icons.person_rounded, size: 20, color: Colors.grey,),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                  const SizedBox(height: 20.0),
                                   Container(
                                     padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 70),
                                     decoration: BoxDecoration(
@@ -135,7 +184,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                       children:  <Widget>[
                                         const Expanded(
                                           child: Text(
-                                            'Log In',
+                                            'Next',
                                             style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 15.0,
@@ -143,11 +192,12 @@ class _OTPScreenState extends State<OTPScreen> {
                                             ),
                                           ),
                                         ),
-                                        IconButton(
-                                          onPressed: (){
-                                            Navigator.pushNamed(context, RegistrationFirstScreen.id);
-                                          },
-                                          icon: const Icon(Icons.logout, size: 30, color: Colors.white,),
+                                        Align(
+                                          alignment: Alignment.centerRight,
+                                          child: IconButton(
+                                            onPressed: (){},
+                                            icon: const Icon(Icons.logout, size: 30, color: Colors.white,),
+                                          ),
                                         )
                                         // IconButton(Icons.logout,
                                         //   color: Colors.black,
@@ -186,7 +236,6 @@ class _OTPScreenState extends State<OTPScreen> {
           ],
         ),
       ),
-
     );
   }
 }

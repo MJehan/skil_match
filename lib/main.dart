@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:skill_match/screens/login_screen.dart';
 import 'package:skill_match/screens/otp_login_screen.dart';
+import 'package:skill_match/screens/registration_first_screen.dart';
+import 'package:skill_match/screens/registration_second_screen.dart';
 import 'package:skill_match/screens/welcome_screen.dart';
 
 void main() {
@@ -23,7 +25,8 @@ class MyApp extends StatelessWidget {
         WelcomeScreen.id: (context) => const WelcomeScreen(),
         LogInScreen.id: (context) => const LogInScreen(),
         OTPScreen.id: (context) => const OTPScreen(),
-
+        RegistrationFirstScreen.id: (context) => const RegistrationFirstScreen(),
+        RegistrationSecondScreen.id: (context) => const RegistrationSecondScreen(),
       },
       //home:  const WelcomeScreen(),
     );
